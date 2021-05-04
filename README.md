@@ -1,3 +1,31 @@
+## API Reference
+
+#### Get blocklist
+
+```http
+  GET /blocklist?verbose=false
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `verbose` | `boolean` | Default false. When true, includes the number of times each room has been blocked. |
+
+#### Add to blocklist
+
+```http
+  POST /block/{room_number}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `room_number`| `integer` | **Required**. Id of room to block. |
+
+
+
+  
+
+
+
 # ExpressJS Postgres Example
 
 This example starts an [ExpressJS](https://expressjs.com/) server that connects
@@ -13,12 +41,12 @@ to a Railway PostgreSQL database.
 
 ## 💁‍♀️ How to use
 
-- Install dependencies `yarn`
+- Install dependencies `npm install`
 - [Create a Railway project with the Postgres plugin](https://dev.new)
 - Connect to your Railway project `railway link`
-- Start the server `railway run yarn dev`
+- Start the server `railway run npm run dev`
 
 ## 📝 Notes
 
 The server started simply returns the current time in the database. The SQL
-query is located in `src/index.js`.
+query is located in `src/index.ts`.
